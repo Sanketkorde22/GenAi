@@ -6,9 +6,9 @@ import fs from 'fs/promises';
 
 // Initialize Express app
 const app = express();
-
+const token = process.env_TOKEN;
 // Initialize GoogleGenerativeAI with the provided API key
-const genAI = new GoogleGenerativeAI("AIzaSyD0S3unULnmUwDFy0ptnwjO59nIjgRye5Q");
+const genAI = new GoogleGenerativeAI(token);
 const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 
 // Middleware to parse URL-encoded bodies
